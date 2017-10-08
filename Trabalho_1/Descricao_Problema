@@ -1,0 +1,7 @@
+1) Faça um programa cliente/servidor multithread onde:
+-- cliente leia o IP e a Porta que deva se conectar no servidor.
+-- cliente envia três números ao servidor.
+-- servidor recebe os números. Posteriormente, deve calcular o maior e o menor dos três.
+-- servidor retorna mensagem para o cliente indicando qual o maior e qual o menor dos três.
+-- Se o primeiro número recebido pelo servidor for negativo, o mesmo deve ser finalizado.
+-- cliente mostra a mensagem recebida do servidor na tela.

@@ -1,0 +1,10 @@
+2) Faça um programa cliente/servidor multithread onde:
+Tenha uma classe Quadrilatero com os seguintes atributos: lado1, lado2, lado3, lado4 e tipo do quadrilatero. Esta classe deve ter os seguintes métodos:
+-- ledados: que leia os atributos lado1, lado2, lado3 e lado4.
+-- indicatipoquadrilatero: que indica o tipo do quadrilátero (retângulo, quadradro ou quadriátero) baseado nos valores dos lados. Depois atualiza o atributo tipo do quadrilátero.
+-- mostradados: que mostre todos os dados do objeto.
+Cliente instancie objeto da classe Quadrilatero e leia os atributos do objeto.
+Cliente envia objeto para servidor.
+Servidor recebe objeto do cliente e chama método indicatipoquadrilatero.
+Servidor devolve objeto para o cliente.
+Cliente mostra os dados do objeto.
