@@ -11,8 +11,8 @@ public class ThreadServidor extends Thread{
     }
 
     public void run(){
-        try {
-              System.out.println("Conexão com cliente aceita");  
+        try { 
+              //Para enviar objeto 
               ObjectOutputStream saida = new ObjectOutputStream(socket.getOutputStream());
               Quadrilatero dados = new Quadrilatero();
 

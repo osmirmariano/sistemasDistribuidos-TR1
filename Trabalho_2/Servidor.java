@@ -19,6 +19,7 @@ public class Servidor {
 
         while(true) {
             try {
+                //Aceita conexão .accept()
                 socket = servico.accept();
                 ThreadServidor serviceThread = new ThreadServidor(socket);
                 serviceThread.start();

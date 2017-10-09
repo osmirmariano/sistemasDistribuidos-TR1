@@ -22,6 +22,7 @@ public class Cliente {
             InetSocketAddress endereco = new InetSocketAddress(ip, porta);
             socket.connect(endereco, 1000);
 
+            //Para receber o objeto socket
             ObjectInputStream entrada = new ObjectInputStream(socket.getInputStream());
             Quadrilatero dados = (Quadrilatero) entrada.readObject();
 
