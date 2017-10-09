@@ -35,7 +35,7 @@ public class ThreadServidor extends Thread {
                 System.exit(0);
              }
              
-            produtos[0] = "arroz";
+            produtos[0] = "Teste";
             quantidade[0] = 2;
             
             for (i = 0; i < produtos[i].length(); i++) {

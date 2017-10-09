@@ -27,8 +27,6 @@ class Cliente {
             receber = new DataInputStream(socket.getInputStream());
             enviar = new DataOutputStream(socket.getOutputStream());
             
-            
-
             socket.close();
         } 
         catch (IOException e) {

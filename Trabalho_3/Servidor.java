@@ -9,7 +9,7 @@ public class Servidor {
         Socket socket;
 
         try {
-            servico = new ServerSocket(4321,300);
+            servico = new ServerSocket(4321);
         } 
         catch(IOException e) {
             System.out.println(e);

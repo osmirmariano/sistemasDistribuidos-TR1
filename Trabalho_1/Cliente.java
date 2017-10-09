@@ -14,6 +14,7 @@ class Cliente {
         DataOutputStream enviar;
         
         try {
+            //Inserção das informações dos dados IP e PORTA
             System.out.println("Por favor, forneça o endereço de IP: ");
             ip = valor.next();
             System.out.println("Por favor, forneça o número da Porta: ");
@@ -23,7 +24,7 @@ class Cliente {
             //Vinculando o endereço ao socket e realizando a conexão
             InetSocketAddress endereco = new InetSocketAddress(ip, porta);
             socket.connect(endereco, 1000);//Teste de tempo caso não seja estabelecida a conexão
-
+            //Enviar e receber (servidor e cliente)
             receber = new DataInputStream(socket.getInputStream());
             enviar = new DataOutputStream(socket.getOutputStream());
             
@@ -35,7 +36,8 @@ class Cliente {
             //Variáveis recebendo
             maior = receber.readInt();
             menor = receber.readInt();
-            
+
+            //Mostrando os resultados
             System.out.println("---------------------------------------");
             System.out.println("RESULTADO DO PROCESSAMENTO");
             System.out.println("---------------------------------------");
