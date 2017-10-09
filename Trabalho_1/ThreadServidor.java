@@ -49,7 +49,7 @@ public class ThreadServidor extends Thread {
             socket.close();
         } 
         catch (IOException e) {
-            System.out.print("Erro = " + e);
+            System.out.print("Erro " + e);
         }
     }
 
