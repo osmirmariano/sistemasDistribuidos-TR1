@@ -10,8 +10,8 @@ class Cliente {
         int numero, maior, menor, porta, x;
         String ip;
         Socket socket;
-        DataInputStream leitura;
-        DataOutputStream escrita;
+        DataInputStream receber;
+        DataOutputStream enviar;
         
         try {
             System.out.println("Por favor, forneça o endereço de IP: ");
@@ -19,25 +19,22 @@ class Cliente {
             System.out.println("Por favor, forneça o número da Porta: ");
             porta = valor.nextInt();
             
-            
             socket = new Socket();
-            
             //Vinculando o endereço ao socket e realizando a conexão
             InetSocketAddress endereco = new InetSocketAddress(ip, porta);
             socket.connect(endereco, 1000);//Teste de tempo caso não seja estabelecida a conexão
 
-            leitura = new DataInputStream(socket.getInputStream());
-            escrita = new DataOutputStream(socket.getOutputStream());
-            
+            receber = new DataInputStream(socket.getInputStream());
+            enviar = new DataOutputStream(socket.getOutputStream());
             
             for(x = 0; x < 3; x++){
                 System.out.println("Informe o "+(x+1)+"º número: ");
                 numero = valor.nextInt();
-                escrita.writeInt(numero);//Enviando os valores para o servidor
+                enviar.writeInt(numero);//Enviando os valores para o servidor
             }
-            
-            maior = leitura.readInt();
-            menor = leitura.readInt();
+            //Variáveis recebendo
+            maior = receber.readInt();
+            menor = receber.readInt();
             
             System.out.println("---------------------------------------");
             System.out.println("RESULTADO DO PROCESSAMENTO");

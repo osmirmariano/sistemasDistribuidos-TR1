@@ -7,7 +7,7 @@ class Servidor{
         //Declaração das variáveis
         ServerSocket servico = (ServerSocket)null;
         Socket socket;
-        DataOutputStream escrita;
+        //DataOutputStream enviar;
         
         try {
             //Criar o ServerSocket, espear a conexão na porta 4321

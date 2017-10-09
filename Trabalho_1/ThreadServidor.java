@@ -4,8 +4,8 @@ import java.io.*;
 public class ThreadServidor extends Thread {
 
     public Socket socket;
-    DataOutputStream escrita;
-    DataInputStream leitura;
+    DataOutputStream enviar;
+    DataInputStream receber;
     int[] numeros;
 
     public ThreadServidor(Socket socket) {
@@ -16,11 +16,11 @@ public class ThreadServidor extends Thread {
     @Override
     public void run() {
         try {
-            escrita = new DataOutputStream(socket.getOutputStream());
-            leitura = new DataInputStream(socket.getInputStream());
+            enviar = new DataOutputStream(socket.getOutputStream());
+            receber = new DataInputStream(socket.getInputStream());
             
             numeros = new int[3];
-            numeros[0] = leitura.readInt();
+            numeros[0] = receber.readInt();
             //Tratando número negativo
             if (numeros[0] < 0) {
                 System.err.println("\nAtenção o número é negativo. O programa irá encerrar.\n");
@@ -33,7 +33,7 @@ public class ThreadServidor extends Thread {
 
             //Realizando verificação do maior e menor
             for (x = 1; x <= 2; x++) {
-                numeros[x] = leitura.readInt();
+                numeros[x] = receber.readInt();
                 if (numeros[x] > maior) {
                     maior = numeros[x];
                 } 
@@ -44,11 +44,9 @@ public class ThreadServidor extends Thread {
                 } 
             }
 
-            escrita.writeInt(maior);
-            escrita.writeInt(menor);
-
+            enviar.writeInt(maior);
+            enviar.writeInt(menor);
             socket.close();
-
         } 
         catch (IOException e) {
             System.out.print("Erro = " + e);
